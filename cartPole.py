@@ -5,7 +5,7 @@ from pygame.locals import *
 import sys
 import time
 dt = 0.01
-t = np.arange(0, 600+dt, dt)
+t = np.arange(0, 180+dt, dt)
 g = 9.81
 l = 2.5
 m1 = 50
