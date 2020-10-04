@@ -22,7 +22,7 @@ pdd = np.zeros(len(t))
 for i in range(len(t)):
     if i == 0:
         p[i] = np.pi/2  # initial condition
-        pd[i] = -3  # initial condition
+        pd[i] = 0  # initial condition
 
         x[i] = 0
         xd[i] = 0
@@ -32,7 +32,8 @@ for i in range(len(t)):
         # xdd[i] = (m2*l*pdd[i]*np.cos(p[i])-m2*l*pd[i]**2*np.sin(p[i]))
         xdd[i] = 0
     else:
-        pdd[i] = (-g * np.sin(p[i-1]) + xdd[i-1] * np.cos(p[i-1])) / l
+        # pdd[i] = (-g * np.sin(p[i-1]) + xdd[i-1] * np.cos(p[i-1])) / l
+        pdd[i] = (-g * np.sin(p[i-1])) / l
         xdd[i] = (-m2 * l * pdd[i-1] * np.cos(p[i-1]) + m2 * l * pd[i-1] ** 2 * np.sin(p[i-1]))/(m1+m2)
 
         pd[i] = pd[i-1] + dt*pdd[i]
