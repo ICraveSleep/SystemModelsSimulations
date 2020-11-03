@@ -5,7 +5,7 @@ from pygame.locals import *
 import sys
 import time
 dt = 0.01
-t = np.arange(0, 180+dt, dt)
+t = np.arange(0, 60+dt, dt)
 g = 9.81
 l = 2.5
 m1 = 50
@@ -21,7 +21,8 @@ pdd = np.zeros(len(t))
 
 for i in range(len(t)):
     if i == 0:
-        p[i] = np.pi/2  # initial condition
+        rad = 90*np.pi/180
+        p[i] = rad  # initial condition
         pd[i] = 0  # initial condition
 
         x[i] = 0
